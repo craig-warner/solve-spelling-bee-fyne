@@ -110,7 +110,7 @@ func main() {
 
 	// Containing it all
 	output_container := container.NewVScroll(text)
-	output_container.SetMinSize(fyne.NewSize(200,200))
+	output_container.SetMinSize(fyne.NewSize(200,400))
 
 	top_containter := container.NewVBox(
 					form,

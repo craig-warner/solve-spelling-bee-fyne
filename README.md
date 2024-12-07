@@ -10,11 +10,11 @@ The program is written in go using fyne.io so it can run most anywhere.
 
 # Building .apk for Android Studio
 ## msys-x64 
-% fyne package -os android -appID com.example.solve-spelling-bee-fyne -icon assets/solve-spelling-bee-fyne.png
-% fyne package -os windows -icon -icon assets/solve-spelling-bee-fyne.png
+% fyne package -os android -appID com.example.solvespellingbeefyne -icon assets/solve-spelling-bee-fyne.png
+% fyne package -os windows -icon assets/solve-spelling-bee-fyne.png
  
 # Installing .apk to Android Studio
-Drag ssb.apk to emulator icon
+Drag Solve_Spelling_Bee.apk to emulator icon
 
 # Installaion on Ubuntu 
 ## - Assumptions
