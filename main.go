@@ -38,6 +38,7 @@ func main() {
 	// Output
 	start_str:= "Solution will be displayed here\n"
 	text := widget.NewLabel(start_str)
+	text.TextStyle = fyne.TextStyle{Monospace: true}
 
 	center_letter := widget.NewEntry()
 	other_letters := widget.NewEntry()
@@ -71,7 +72,7 @@ func main() {
 
 	// Containing it all
 	output_container := container.NewVScroll(text)
-//	output_container.Resize(fyne.NewSize(200,200))
+	output_container.SetMinSize(fyne.NewSize(200,200))
 
 	top_containter := container.NewVBox(
 					form,
