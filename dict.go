@@ -9688,7 +9688,7 @@ func (d *WordList) LoadDict () {
 	}
 }
 
-func (d *WordList) Solve(center_letter string, other_letters string) {
+func (d *WordList) Solve(center_letter string, other_letters string) []string {
 	var word string
 	var word_score int
 	var total_pangrams int
@@ -9696,6 +9696,7 @@ func (d *WordList) Solve(center_letter string, other_letters string) {
 	var total_score int
 	var pstr string
 	var str string
+	var all_str []string
 
 	if(!d.loaded) {
 		panic(1)
@@ -9716,9 +9717,13 @@ func (d *WordList) Solve(center_letter string, other_letters string) {
 			}
         	str = fmt.Sprintf("Word found: %15s, Value: %d %s", word,word_score,pstr)
         	fmt.Println(str)
+			all_str =append(all_str,str)
         	total_words_found = total_words_found +1
         	total_score = total_score + word_score 
 		}
 	}
-	fmt.Println ("Total number of words found=",total_words_found," Score=",total_score, " Pangrams=", total_pangrams)
+	//fmt.Println ("Total number of words found=",total_words_found," Score=",total_score, " Pangrams=", total_pangrams)
+	str = fmt.Sprintf("Total number of words found=%d Score=%d Pangrams=%d",total_words_found,total_score, total_pangrams)
+	all_str = append(all_str,str)
+	return(all_str)
 }

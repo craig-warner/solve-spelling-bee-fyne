@@ -5,6 +5,7 @@ import (
 	"log"
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
 )
 
@@ -17,6 +18,10 @@ func CheckInput(letters string,required_len int) bool {
 }
 
 func main() {
+	var solution []string
+	var one_str string
+//	var text widget.Label
+//	var some_strs []string
 
 	myApp := app.New()
 	myWindow := myApp.NewWindow("Solve Spelling Bee")
@@ -30,6 +35,10 @@ func main() {
 	// Prepare Dictionary
 	word_list := NewWordList()
 
+	// Output
+	start_str:= "Solution will be displayed here\n"
+	text := widget.NewLabel(start_str)
+
 	center_letter := widget.NewEntry()
 	other_letters := widget.NewEntry()
 
@@ -42,17 +51,32 @@ func main() {
 				log.Println("Center Letter is fine")
 				ok := CheckInput(other_letters.Text,6)
 				if(ok) {
-					word_list.Solve(center_letter.Text,other_letters.Text)
+//					solution = word_list.Solve(center_letter.Text,other_letters.Text)
+					solution = word_list.Solve(center_letter.Text,other_letters.Text)
+					for i:=0;i<len(solution);i++ {
+						one_str = one_str + solution[i] + "\n"
+					}
+					log.Println(one_str)
+					text.SetText(one_str)
 				}
 				log.Println("Center Letter:", center_letter.Text)
 				log.Println("Other Letters:", other_letters.Text)
 			}
-			myWindow.Close()
+			// Update display
+			//myWindow.Close()
 		},
 	}
 	// we can also append items
 	form.Append("Other Letters", other_letters)
 
-	myWindow.SetContent(form)
+	// Containing it all
+	output_container := container.NewVScroll(text)
+//	output_container.Resize(fyne.NewSize(200,200))
+
+	top_containter := container.NewVBox(
+					form,
+					output_container)
+
+	myWindow.SetContent(top_containter)
 	myWindow.ShowAndRun()
 }
