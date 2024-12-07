@@ -9703,7 +9703,7 @@ func (d *WordList) Solve(center_letter string, other_letters string) []string {
 	}
 
 	all_letters := other_letters + center_letter
-	fmt.Println("Solving")
+//	fmt.Println("Solving")
 	total_pangrams = 0
 	for i := 0; i < len(d.all_words); i++ {
 		word = d.all_words[i] 
@@ -9716,7 +9716,7 @@ func (d *WordList) Solve(center_letter string, other_letters string) []string {
             	pstr = ""
 			}
         	str = fmt.Sprintf("Word found: %15s, Value: %d %s", word,word_score,pstr)
-        	fmt.Println(str)
+//        	fmt.Println(str)
 			all_str =append(all_str,str)
         	total_words_found = total_words_found +1
         	total_score = total_score + word_score 
