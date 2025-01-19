@@ -12,6 +12,7 @@ The program is written in go using fyne.io so it can run most anywhere.
 ## msys-x64 
 % fyne package -os android -appID com.example.solvespellingbeefyne -icon assets/solve-spelling-bee-fyne.png
 % fyne package -os windows -icon assets/solve-spelling-bee-fyne.png
+% fyne package -os linux -icon assets/solve-spelling-bee-fyne.png
  
 # Installing .apk to Android Studio
 Drag Solve_Spelling_Bee.apk to emulator icon
