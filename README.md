@@ -11,17 +11,18 @@ The program is written in go using fyne.io so it can run most anywhere.
 # Building .apk for Android Studio
 ## msys-x64 
 % fyne package -os android -appID com.example.solvespellingbeefyne -icon assets/solve-spelling-bee-fyne.png
-% fyne package -os windows -icon assets/solve-spelling-bee-fyne.png
-% fyne package -os linux -icon assets/solve-spelling-bee-fyne.png
- 
-# Installing .apk to Android Studio
+## Installing .apk to Android Studio
 Drag Solve_Spelling_Bee.apk to emulator icon
 
-# Installaion on Ubuntu 
-tar xf 'Solve Spellin Bee.tar.xz'
-sudo make install
+# Building Windows 
+% fyne package -os windows -icon assets/solve-spelling-bee-fyne.png
 
-## - Assumptions
+# Building Linux 
+% fyne package -os linux -icon assets/solve-spelling-bee-fyne.png
+## Installaion on Ubuntu 
+%tar xf 'Solve Spelling Bee.tar.xz'
+%sudo make install
+## Assumptions
  * GOHOME = /home/craigwarner
 %sudo apt install libgl1-mesa-dev xorg-dev
 %go run -v main.go dict.go
