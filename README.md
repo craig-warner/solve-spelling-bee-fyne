@@ -18,12 +18,15 @@ The program is written in go using fyne.io so it can run most anywhere.
 Drag Solve_Spelling_Bee.apk to emulator icon
 
 # Installaion on Ubuntu 
+tar xf 'Solve Spellin Bee.tar.xz'
+sudo make install
+
 ## - Assumptions
  * GOHOME = /home/craigwarner
 %sudo apt install libgl1-mesa-dev xorg-dev
 %go run -v main.go dict.go
 
-# Intalling  
+# Alternative Intall
 1) sudo /home/craigwarner/go/bin/fyne get github.com/craig-warner/solve-spelling-bee-fyne
 
 
